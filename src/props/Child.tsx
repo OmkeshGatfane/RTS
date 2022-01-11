@@ -1,18 +1,27 @@
 interface ChildProp {
     color: string;
+    onClick: () => void;
 }
 
-export const Child = ({color}: ChildProp) => {
+export const Child = ({color, onClick}: ChildProp) => {
     return (
         <div>
             {color}
-            <button>click me!</button>
+            <button onClick={onClick}>click me!</button>
         </div>
     );
 };
 
-export const ChildAsFC: React.FC<ChildProp> = ({color}) => {
-    return <div>hello nagpur</div>;
+export const ChildAsFC: React.FC<ChildProp> = ({color, onClick}) => {
+    return (
+        <div>
+            hello nagpur
+            <div>
+                {color}
+                <button onClick={onClick}>click me!</button>
+            </div>
+        </div>
+    );
 };
 
 export const ChildAsFC1: React.FunctionComponent<ChildProp> = ({color}) => {
