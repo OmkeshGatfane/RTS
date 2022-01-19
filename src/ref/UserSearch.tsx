@@ -31,6 +31,7 @@ const UserSearch: React.FC = () => {
             <div>{user && user.name}</div>
             <div>{user?.age}</div>
         </div>
+        <dispatchEvent></dispatchEvent>
     );
 };
 
